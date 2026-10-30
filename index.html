@@ -1,19 +1,28 @@
-<div class="videoWrap" style="position:relative">
-    <!-- БАЛАНЫҢ ФОТОСЫ БІРІНШІ ШЫҒАДЫ -->
-    <img src="photo.jpg" id="mainPhoto" style="width:100%;display:block;border-radius:16px;cursor:pointer" onclick="playVideo()">
-    <!-- ВИДЕО АСТЫНДА ЖАСЫРЫН ТҰРАДЫ -->
-    <video id="mainVideo" loop playsinline controls style="width:100%;display:none;border-radius:16px">
-      <source src="video.mp4" type="video/mp4">
-    </video>
-    <div id="playBtn" onclick="playVideo()" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;background:rgba(255,255,255,0.9);border-radius:50%;display:grid;place-items:center;font-size:30px;cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,0.3)">▶️</div>
-</div>
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Әлиханның Сүндет Тойы</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#c5a66b;--gold2:#a78953;--dark:#2b2118}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f3eb;color:var(--dark);font-family:'Montserrat',sans-serif;text-align:center;overflow-x:hidden}
+#envelope{position:fixed;inset:0;z-index:99999;background:radial-gradient(ellipse at 50% 20%,#fff,#fffdf8 30%,#f8f3eb 60%,#eaddc0);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:1.2s cubic-bezier(.7,0,.3,1);cursor:pointer}
+#envelope.hide{transform:translateY(-115%);opacity:0;pointer-events:none}
+.env-box{width:340px;height:220px;background:linear-gradient(145deg,#e8c87a,#c5a66b,#a58a5d);border-radius:16px;position:relative;box-shadow:0 30px 60px rgba(139,115,53,.3)}
+.env-circle{position:absolute;top:58%;left:50%;transform:translate(-50%,-50%);width:110px;height:110px;background:#000;border-radius:50%;overflow:hidden;border:3px solid #e8c87a;box-shadow:0 5px 15px rgba(0,0,0,0.2)}
+.env-circle img{width:100%;height:100%;object-fit:cover;display:block}
 
-<script>
-function playVideo(){
-  document.getElementById('mainPhoto').style.display='none';
-  document.getElementById('playBtn').style.display='none';
-  let v=document.getElementById('mainVideo');
-  v.style.display='block';
-  v.play();
-}
-</script>
+/* АНИМАЦИЯ */
+@keyframes float {0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}}
+@keyframes shimmer {0%{background-position:-200% 0} 100%{background-position:200% 0}}
+@keyframes glow {0%,100%{text-shadow:0 0 10px rgba(197,166,107,0.3)} 50%{text-shadow:0 0 25px rgba(197,166,107,0.8),0 0 40px rgba(197,166,107,0.4)}}
+@keyframes fadeInUp {0%{opacity:0;transform:translateY(20px)} 100%{opacity:1;transform:translateY(0)}}
+
+.animated-title{
+  font-family:'Great Vibes',cursive;
+  font-size:46px;
+  background: linear-gradient(90deg,#a78953 0%,#e8c87a 25%,#c5a66b 50%,#e8c87a 75%,#a78953 100%);
+ 
